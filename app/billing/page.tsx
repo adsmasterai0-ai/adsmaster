@@ -172,7 +172,7 @@ export default function BillingPage() {
               width: "32px",
               height: "32px",
               objectFit: "contain",
-              borderRadius: "8px",
+              borderRadius: "20px",
             }}
           />
           <span

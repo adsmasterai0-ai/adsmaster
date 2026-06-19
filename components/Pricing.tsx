@@ -1,3 +1,6 @@
+
+
+
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -128,6 +131,7 @@ const plans = [
       "❌ Keyword Suggestions",
       
     ],
+     
     button: "Start Free",
   },
 
@@ -318,24 +322,29 @@ const plans = [
                       fontWeight: 500,
                     }}
                   >
-                    <span
-                      style={{
-                        width: "22px",
-                        height: "22px",
-                        borderRadius: "999px",
-                        background:
-                          "linear-gradient(135deg,#2563eb,#7c3aed)",
-                        color: "#fff",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: "12px",
-                        fontWeight: 700,
-                        flexShrink: 0,
-                      }}
-                    >
-                      ✓
-                    </span>
+                   {feature.includes("❌") ? (
+  <span
+    style={{
+      color: "#dc2626",
+      fontSize: "20px",
+      fontWeight: "700",
+      minWidth: "20px",
+    }}
+  >
+    ✕
+  </span>
+) : (
+  <span
+    style={{
+      color: "#16a34a",
+      fontSize: "20px",
+      fontWeight: "700",
+      minWidth: "20px",
+    }}
+  >
+    ✓
+  </span>
+)}
 
                     {feature}
                   </li>

@@ -1,240 +1,199 @@
-"use client"
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
-
+"use client";
 
 export default function Features() {
   const features = [
     {
-      icon: "🚀",
-      title: "AI Campaign Generator",
-      desc: "Generate complete Google Ads campaigns with headlines, descriptions, keywords and strategy in seconds.",
-    },
-    {
-      icon: "📷",
-      title: "Screenshot Analysis",
-      desc: "Upload Google Ads screenshots and get AI-powered recommendations to improve performance.",
-    },
-    {
       icon: "🎯",
+      title: "AI Keyword Generator",
+      desc: "Generate high-intent keywords tailored to your business and target audience.",
+    },
+    {
+      icon: "✍️",
+      title: "Headline Generator",
+      desc: "Create click-worthy Google Ads headlines optimized for better CTR.",
+    },
+    {
+      icon: "📝",
+      title: "Description Generator",
+      desc: "Generate persuasive ad descriptions in seconds with AI assistance.",
+    },
+    {
+      icon: "📸",
+      title: "Screenshot Analysis",
+      desc: "Upload campaign screenshots and receive actionable improvement suggestions.",
+    },
+    {
+      icon: "🚀",
       title: "Google Ads Coach",
-      desc: "Ask questions and get expert-level guidance for bidding, targeting and optimization.",
-    },
-    {
-      icon: "🔑",
-      title: "Keyword Research",
-      desc: "Discover high-intent keywords that bring better clicks, leads and conversions.",
-    },
-    {
-      icon: "🚫",
-      title: "Negative Keywords",
-      desc: "Reduce wasted spend by identifying irrelevant and low-converting search terms.",
-    },
-    {
-      icon: "💰",
-      title: "Budget Optimizer",
-      desc: "Allocate your budget intelligently with AI-driven recommendations.",
+      desc: "Get step-by-step recommendations to improve campaign performance.",
     },
     {
       icon: "📈",
-      title: "ROAS Improvement",
-      desc: "Get actionable recommendations to improve return on ad spend and profitability.",
+      title: "ROAS Optimization",
+      desc: "Identify opportunities to increase conversions and reduce wasted spend.",
     },
     {
-      icon: "⭐",
-      title: "Quality Score Boost",
-      desc: "Improve ad relevance, CTR and landing page experience for better Quality Scores.",
+      icon: "🚫",
+      title: "Negative Keywords Finder",
+      desc: "Discover irrelevant search terms and prevent budget leakage.",
+    },
+    {
+      icon: "⚡",
+      title: "Landing Page Analyzer",
+      desc: "Analyze landing pages and uncover conversion improvement opportunities.",
     },
   ];
 
   return (
     <section
-      id="features"
       style={{
-        padding: "120px 24px",
-        background:
-          "linear-gradient(180deg,#ffffff 0%,#f8fafc 100%)",
+        maxWidth: "1280px",
+        margin: "100px auto",
+        padding: "0 20px",
       }}
     >
+      {/* Heading */}
+
       <div
         style={{
-          maxWidth: "100%",
-          margin: "0 auto",
+          textAlign: "center",
+          marginBottom: "60px",
         }}
       >
-        {/* Heading */}
-
         <div
           style={{
-            textAlign: "center",
-            marginBottom: "40px",
+            display: "inline-block",
+            padding: "10px 18px",
+            background: "#eff6ff",
+            border: "1px solid #bfdbfe",
+            borderRadius: "999px",
+            color: "#2563eb",
+            fontWeight: 700,
+            fontSize: "14px",
           }}
         >
-       
-          <h2
-            style={{
-              fontSize: "56px",
-              fontWeight: "900",
-              color: "#111827",
-              marginBottom: "20px",
-              lineHeight: "1.1",
-            }}
-          >
-            Everything You Need To
-            <br />
-            Scale Google Ads
-          </h2>
-
-          <p
-            style={{
-              maxWidth: "750px",
-              margin: "0 auto",
-              color: "#64748b",
-              fontSize: "20px",
-              lineHeight: "1.8",
-            }}
-          >
-            Built specifically for businesses, agencies and marketers
-            who want better CTR, lower CPC and higher ROAS.
-          </p>
+          Powerful Features
         </div>
 
-        {/* Features Grid */}
-
-        <div
+        <h2
           style={{
-            display: "grid",
-            gridTemplateColumns:
-              "repeat(auto-fit,minmax(320px,1fr))",
-            gap: "28px",
+            fontSize: "48px",
+            fontWeight: "900",
+            lineHeight: "1.1",
+            color: "#111827",
+            marginTop: "22px",
+            marginBottom: "18px",
+            letterSpacing: "-1.5px",
           }}
         >
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              style={{
-                background: "#ffffff",
-                borderRadius: "28px",
-                padding: "32px",
-                border: "1px solid #e5e7eb",
-                boxShadow:
-                  "0 20px 50px rgba(0,0,0,0.05)",
-                transition: "0.3s",
-              }}
-            >
-              <div
-                style={{
-                  width: "72px",
-                  height: "72px",
-                  borderRadius: "20px",
-                  background:
-                    "linear-gradient(135deg,#2563eb,#4f46e5)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "32px",
-                  marginBottom: "24px",
-                  boxShadow:
-                    "0 15px 35px rgba(37,99,235,0.25)",
-                }}
-              >
-                {feature.icon}
-              </div>
+          Everything You Need To Improve Google Ads
+        </h2>
 
-              <h3
-                style={{
-                  fontSize: "24px",
-                  fontWeight: "800",
-                  color: "#111827",
-                  marginBottom: "14px",
-                }}
-              >
-                {feature.title}
-              </h3>
-
-              <p
-                style={{
-                  color: "#64748b",
-                  lineHeight: "1.9",
-                  fontSize: "16px",
-                }}
-              >
-                {feature.desc}
-              </p>
-
-              <div
-                style={{
-                  marginTop: "24px",
-                  color: "#2563eb",
-                  fontWeight: "700",
-                  fontSize: "15px",
-                }}
-              >
-                           </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom Premium Banner */}
-
-        <div
+        <p
           style={{
-            marginTop: "70px",
-            borderRadius: "32px",
-            padding: "50px",
-            background:
-              "linear-gradient(135deg,#2563eb,#4f46e5)",
-            color: "#ffffff",
-            textAlign: "center",
-            boxShadow:
-              "0 30px 80px rgba(37,99,235,0.25)",
+            maxWidth: "700px",
+            margin: "0 auto",
+            color: "#64748b",
+            fontSize: "18px",
+            lineHeight: "1.8",
           }}
         >
-          <h3
-            style={{
-              fontSize: "42px",
-              fontWeight: "900",
-              marginBottom: "16px",
-            }}
-          >
-            Stop Guessing. Start Optimizing.
-          </h3>
-
-          <p
-            style={{
-              fontSize: "18px",
-              opacity: 0.9,
-              maxWidth: "700px",
-              margin: "0 auto 30px",
-              lineHeight: "1.8",
-            }}
-          >
-            Generate campaigns, analyze screenshots, improve CTR,
-            reduce CPC and scale your Google Ads performance with AI.
-          </p>
-
-   <Link href="/chat" scroll={true}>
-  <button
-    style={{
-      marginTop: "20px",
-      background: "#ffffff",
-      color: "#2563eb",
-      border: "none",
-      padding: "18px 34px",
-      borderRadius: "16px",
-      fontWeight: 800,
-      fontSize: "16px",
-      cursor: "pointer",
-      boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
-      transition: "all 0.3s ease",
-    }}
-  >
-    🚀 Start Optimizing AI
-  </button>
-</Link>
-        </div>
+          Generate keywords, headlines, descriptions and optimization
+          recommendations without spending hours researching.
+        </p>
       </div>
+
+      {/* Feature Grid */}
+
+      <div className="feature-grid">
+        {features.map((item, index) => (
+          <div className="feature-card" key={index}>
+            <div className="icon-box">{item.icon}</div>
+
+            <h3>{item.title}</h3>
+
+            <p>{item.desc}</p>
+
+            <span className="feature-number">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <style jsx>{`
+        .feature-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 24px;
+        }
+
+        .feature-card {
+          position: relative;
+          background: #ffffff;
+          border: 1px solid #e5e7eb;
+          border-radius: 24px;
+          padding: 28px;
+          min-height: 240px;
+          transition: all 0.25s ease;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .feature-card:hover {
+          transform: translateY(-8px);
+          border-color: #c7d2fe;
+          box-shadow: 0 20px 50px rgba(37, 99, 235, 0.15);
+        }
+
+        .icon-box {
+          width: 58px;
+          height: 58px;
+          border-radius: 18px;
+          background: linear-gradient(
+            135deg,
+            #eff6ff,
+            #dbeafe
+          );
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 28px;
+          margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+          font-size: 22px;
+          font-weight: 800;
+          color: #111827;
+          margin-bottom: 12px;
+        }
+
+        .feature-card p {
+          color: #64748b;
+          line-height: 1.8;
+          font-size: 15px;
+          margin: 0;
+        }
+
+        .feature-number {
+          position: absolute;
+          bottom: 18px;
+          right: 24px;
+          font-size: 13px;
+          font-weight: 800;
+          color: #d1d5db;
+        }
+
+        @media (max-width: 768px) {
+          .feature-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .feature-card {
+            min-height: auto;
+          }
+        }
+      `}</style>
     </section>
   );
 }

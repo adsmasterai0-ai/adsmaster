@@ -19,7 +19,7 @@ export default function AdGeneratorPanel() {
   const [upgradeMessage, setUpgradeMessage] = useState("");
   const [userId, setUserId] = useState("");
   const [goal, setGoal] = useState("");
-
+const [isFullscreen, setIsFullscreen] = useState(false);
   const [businessType, setBusinessType] = useState("");
 const [customBusinessType, setCustomBusinessType] =
   useState("");
@@ -292,28 +292,80 @@ body: JSON.stringify({
     setCustomBudget("");
   };
 
-  return (
-    <div
-      style={{
-        width: "100%",
-        background: "#fff",
-        borderRadius: "24px",
-        padding: "20px",
-        border: "1px solid #e5e7eb",
-        boxShadow:
-          "0 20px 60px rgba(0,0,0,0.06)",
-      }}
-    >
-      <h2
-        style={{
-          fontSize: "32px",
-          fontWeight: "800",
-          marginBottom: "10px",
-          textAlign: "center",
-        }}
-      >
-        🚀 AI Google Ads Campaign Builder
-      </h2>
+
+
+return (
+  <div
+    style={{
+      width: isFullscreen ? "100vw" : "100%",
+      height: isFullscreen ? "100vh" : "auto",
+
+      position: isFullscreen
+        ? "fixed"
+        : "relative",
+
+      top: isFullscreen ? 0 : "auto",
+      left: isFullscreen ? 0 : "auto",
+
+      zIndex: isFullscreen ? 9999 : 1,
+
+      overflowY: isFullscreen
+        ? "auto"
+        : "visible",
+
+      background: "#fff",
+      borderRadius: isFullscreen
+        ? "0px"
+        : "24px",
+
+      padding: "20px",
+
+      border: "1px solid #e5e7eb",
+
+      boxShadow:
+        "0 20px 60px rgba(0,0,0,0.06)",
+    }}
+  >
+   <div
+  style={{
+   
+    position: "relative",
+    marginBottom: "15px",
+  }}
+>
+  <h2
+    style={{
+      fontSize: "32px",
+      fontWeight: "800",
+      marginBottom: "10px",
+      textAlign: "center",
+    }}
+  >
+    🚀 AI Google Ads Campaign Builder
+  </h2>
+
+ <button
+  onClick={() =>
+    setIsFullscreen(!isFullscreen)
+  }
+  style={{
+    position: "absolute",
+    right: "20px",
+    top: "1px",
+
+    zIndex: 100,
+
+    padding: "10px 14px",
+    borderRadius: "12px",
+    border: "1px solid #d1d5db",
+    background: "#fff",
+    cursor: "pointer",
+    fontWeight: "700",
+  }}
+>
+  {isFullscreen ? "✖️" : "⛶ Full Screen"}
+</button>
+</div>
 
         <p
         style={{

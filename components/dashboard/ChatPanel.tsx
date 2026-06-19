@@ -164,6 +164,7 @@ export default function ChatPanel() {
   const [isLoading, setIsLoading] = useState(false);
   const [showUpgrade, setShowUpgrade] = useState(false);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const [plan, setPlan] = useState("free");
   const [userId, setUserId] = useState<string | null>(null);
   useEffect(() => {
@@ -440,6 +441,10 @@ setPlan(data?.plan || "free");
         maxWidth: "100%",
         background: "rgba(255,255,255,0.75)",
         borderRadius: "22px",
+        position: isFullscreen ? "fixed" : "relative",
+        inset: isFullscreen ? "0" : "auto",
+        zIndex: isFullscreen ? 9999 : 1,
+        height: isFullscreen ? "100vh" : "auto",
         boxShadow: "0 32px 80px rgba(15,98,254,0.11), 0 8px 32px rgba(0,0,0,0.06)",
         border: "1px solid rgba(15,98,254,0.10)",
         overflow: "hidden",
@@ -460,6 +465,44 @@ setPlan(data?.plan || "free");
     background: "#ffffff",
   }}
 >
+
+  <div
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: "10px",
+  }}
+>
+  <h2
+    style={{
+      fontSize: "32px",
+      fontWeight: "800",
+      margin: 0,
+      color: "#0f172a",
+    }}
+  >
+    🤖 AI Google Ads Assistant
+  </h2>
+
+  <button
+    onClick={() =>
+      setIsFullscreen(!isFullscreen)
+    }
+    style={{
+      padding: "10px 16px",
+      borderRadius: "10px",
+      border: "1px solid #e2e8f0",
+      background: "#ffffff",
+      cursor: "pointer",
+      fontWeight: "600",
+    }}
+  >
+    {isFullscreen ? "✖️ Exit" : "⛶ Full Screen"}
+  </button>
+</div>
+
+
   <h2
     style={{
       fontSize: "32px",

@@ -3,109 +3,194 @@ export default function Hero() {
     <section
       style={{
         background: "#ffffff",
-        padding: "80px 20px",
+        padding: "30px 20px 20px",
+        marginTop: "20px",
       }}
     >
-     <div
-  style={{
-    textAlign: "center",
-    marginBottom: "20px",
-  }}
->
-  <div
-    style={{
-      display: "inline-flex",
-      alignItems: "center",
-      gap: "8px",
-      padding: "10px 18px",
-      borderRadius: "999px",
-      background: "#eff6ff",
-      border: "1px solid #bfdbfe",
-      color: "#2563eb",
-      fontWeight: "700",
-      fontSize: "14px",
-      marginBottom: "24px",
-    }}
-  >
-    ⚡ AI-Powered Google Ads Platform
-  </div>
-
-  <h2
-    style={{
-      fontSize: "64px",
-      fontWeight: "900",
-      lineHeight: "1.05",
-      letterSpacing: "-2px",
-      color: "#111827",
-      marginBottom: "24px",
-      maxWidth: "1000px",
-      margin: "0 auto 24px",
-    }}
-  >
-    Stop Wasting Money
-    <br />
-
-    <span
-      style={{
-        background:
-          "linear-gradient(135deg,#2563eb,#4f46e5)",
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent",
-      }}
-    >
-      On Google Ads
-    </span>
-  </h2>
-
-  <p
-    style={{
-      maxWidth: "850px",
-      margin: "0 auto",
-      fontSize: "20px",
-      lineHeight: "1.9",
-      color: "#64748b",
-      fontWeight: "500",
-    }}
-  >
-    Generate high-converting campaigns, discover profitable
-    keywords, reduce wasted spend, improve CTR and scale your
-    ROAS with AI-powered recommendations built specifically
-    for Google Ads advertisers.
-  </p>
-
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      flexWrap: "wrap",
-      gap: "14px",
-      marginTop: "32px",
-    }}
-  >
-    {[
-      "🚀 AI Campaign Generator",
-      "📷 Screenshot Analysis",
-      "🎯 Google Ads Coach",
-      "📈 ROAS Optimization",
-    ].map((item) => (
       <div
-        key={item}
         style={{
-          padding: "10px 18px",
-          borderRadius: "999px",
-          background: "#ffffff",
-          border: "1px solid #e5e7eb",
-          fontWeight: "600",
-          color: "#374151",
-          boxShadow:
-            "0 4px 12px rgba(0,0,0,0.04)",
+          textAlign: "center",
+          maxWidth: "1100px",
+          margin: "0 auto",
         }}
       >
-        {item}
+        {/* Badge */}
+
+        <div
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            padding: "10px 18px",
+            borderRadius: "999px",
+            background: "#eff6ff",
+            border: "1px solid #bfdbfe",
+            color: "#2563eb",
+            fontWeight: "700",
+            fontSize: "14px",
+            marginBottom: "20px",
+          }}
+        >
+          ⚡ Built For Freelancers, Agencies & Small Businesses
+        </div>
+
+        {/* Heading */}
+
+        <h1
+          style={{
+            fontSize: "48px",
+            fontWeight: "900",
+            lineHeight: "1.08",
+            letterSpacing: "-2px",
+            color: "#111827",
+            maxWidth: "900px",
+            margin: "0 auto 16px",
+          }}
+        >
+          AI Google Ads Assistant
+
+          <br />
+
+          <span
+            style={{
+              background:
+                "linear-gradient(135deg,#2563eb,#4f46e5)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Generate Keywords, Headlines &
+            Descriptions In Seconds
+          </span>
+        </h1>
+
+        {/* Description */}
+
+        <p
+          style={{
+            maxWidth: "760px",
+            margin: "0 auto",
+            fontSize: "18px",
+            lineHeight: "1.8",
+            color: "#64748b",
+            fontWeight: "500",
+          }}
+        >
+          Create better Google Ads without spending hours researching.
+          Generate high-intent keywords, persuasive headlines,
+          ad descriptions and campaign ideas instantly with AI-powered
+          recommendations.
+        </p>
+
+        {/* Feature Pills */}
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            gap: "12px",
+            marginTop: "28px",
+          }}
+        >
+          {[
+            "🚀 AI Campaign Generator",
+            "📷 Screenshot Analysis",
+            "🎯 Google Ads Coach",
+            "📈 ROAS Optimization",
+          ].map((item) => (
+            <div
+              key={item}
+              style={{
+                padding: "10px 18px",
+                borderRadius: "999px",
+                background: "#ffffff",
+                border: "1px solid #e5e7eb",
+                fontWeight: "600",
+                color: "#374151",
+                boxShadow:
+                  "0 4px 12px rgba(0,0,0,0.05)",
+              }}
+            >
+              {item}
+            </div>
+          ))}
+        </div>
+
+        {/* Stats */}
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            gap: "40px",
+            marginTop: "35px",
+            paddingTop: "25px",
+            borderTop: "1px solid #f1f5f9",
+          }}
+        >
+          <div>
+            <div
+              style={{
+                fontSize: "24px",
+                fontWeight: "800",
+                color: "#111827",
+              }}
+            >
+              15+
+            </div>
+            <div
+              style={{
+                color: "#64748b",
+                fontSize: "14px",
+              }}
+            >
+              Keywords Generated
+            </div>
+          </div>
+
+          <div>
+            <div
+              style={{
+                fontSize: "24px",
+                fontWeight: "800",
+                color: "#111827",
+              }}
+            >
+              15
+            </div>
+            <div
+              style={{
+                color: "#64748b",
+                fontSize: "14px",
+              }}
+            >
+              Headlines Per Campaign
+            </div>
+          </div>
+
+          <div>
+            <div
+              style={{
+                fontSize: "24px",
+                fontWeight: "800",
+                color: "#111827",
+              }}
+            >
+              AI
+            </div>
+            <div
+              style={{
+                color: "#64748b",
+                fontSize: "14px",
+              }}
+            >
+              Campaign Recommendations
+            </div>
+          </div>
+        </div>
       </div>
-    ))}
-  </div>
-</div>
     </section>
   );
 }
