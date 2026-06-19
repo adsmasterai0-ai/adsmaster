@@ -334,10 +334,23 @@ export default function Demo() {
           }}
         >
           {[
-            { value: "12,000+", label: "Campaigns Generated" },
-            { value: "3,400+", label: "Businesses Trust Us" },
-            { value: "38%", label: "Avg. CTR Improvement" },
-            { value: "₹2.1Cr+", label: "Ad Spend Optimized" },
+            {
+    value: "AI",
+    label: "Google Ads Assistant",
+  },
+  {
+    value: "24/7",
+    label: "AI Recommendations",
+  },
+  {
+    value: "📸",
+    label: "Screenshot Analysis",
+  },
+  {
+    value: "🎯",
+    label: "Keyword Generation",
+  },
+
           ].map((stat, i) => (
             <div
               key={i}
@@ -377,8 +390,8 @@ export default function Demo() {
             marginTop: "10px",
           }}
         >
-          {/* Remove this line once real numbers are added */}
-          * Placeholder figures — replace with verified data before launch
+     
+          
         </p>
       </section>
 
