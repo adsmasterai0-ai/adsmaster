@@ -77,7 +77,7 @@ export default function Features() {
 
         <h2
           style={{
-            fontSize: "48px",
+            fontSize: "44px",
             fontWeight: "900",
             lineHeight: "1.1",
             color: "#111827",

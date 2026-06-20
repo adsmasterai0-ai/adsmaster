@@ -279,7 +279,7 @@ const plans = [
               >
                 <div
                   style={{
-                    fontSize: "48px",
+                    fontSize: "44px",
                     fontWeight: 900,
                     color: "#0f172a",
                     lineHeight: 1,

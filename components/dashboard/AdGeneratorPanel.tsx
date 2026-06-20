@@ -345,6 +345,7 @@ return (
   </h2>
 
  <button
+ className="fullscreen-btn"
   onClick={() =>
     setIsFullscreen(!isFullscreen)
   }
@@ -820,7 +821,20 @@ return (
   message={upgradeMessage}
 />
 
-<style>{loadingAnimation}</style>
+<style>{`
+${loadingAnimation}
+
+@media (max-width:768px){
+
+  .fullscreen-btn{
+    display:block !important;
+    position:static !important;
+    margin:0 auto 15px auto !important;
+    width:fit-content !important;
+  }
+
+}
+`}</style>
     </div>
 
     

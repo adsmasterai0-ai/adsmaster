@@ -33,6 +33,7 @@ export default function Navbar() {
         }}
       >
         <div
+        className="navbar-container"
           style={{
             maxWidth: "100%",
             margin: "0 auto",
@@ -47,9 +48,10 @@ export default function Navbar() {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "14px",
+              gap: "8px",
             }}
           >
+            <div className = "back-btn">
             <button
               onClick={() => router.push("/")}
               style={{
@@ -97,6 +99,8 @@ export default function Navbar() {
               </svg>
               Back
             </button>
+                     
+            </div>
 
             <div
               style={{
@@ -109,8 +113,8 @@ export default function Navbar() {
                 src="/logo.png"
                 alt="AdsMaster AI"
                 style={{
-                  width: "38px",
-                  height: "38px",
+                  width: "32px",
+                  height: "32px",
                   borderRadius: "20px",
                   objectFit: "cover",
                   boxShadow:
@@ -118,17 +122,18 @@ export default function Navbar() {
                 }}
               />
 
-              <div
-                style={{
-                  fontSize: "25px",
-                  fontWeight: 900,
-                  color: "#111827",
-                  letterSpacing: "-1px",
-                  lineHeight: 1,
-                }}
-              >
-                AdsMaster AI
-              </div>
+          <div
+          className="logo-text"
+  style={{
+       fontWeight: 900,
+    color: "#111827",
+    letterSpacing: "-1px",
+    lineHeight: 1,
+    whiteSpace: "nowrap",
+  }}
+>
+  ADSMASTER AI
+</div>
             </div>
           </div>
 
@@ -141,17 +146,18 @@ export default function Navbar() {
             }}
           >
             <button
+            className="upgrade-btn"
   onClick={goToPricing}
   style={{
-    padding: "12px 22px",
+    padding: "8px 12px",
     borderRadius: "14px",
-    border: "none",
+        border: "none",
     background:
       "linear-gradient(135deg,#f59e0b,#f97316)",
     color: "#fff",
     cursor: "pointer",
     fontWeight: "800",
-    fontSize: "15px",
+    fontSize: "12px",
     boxShadow:
       "0 10px 25px rgba(249,115,22,0.35)",
     display: "flex",
@@ -160,10 +166,11 @@ export default function Navbar() {
     transition: "all 0.2s ease",
   }}
 >
-  👑 Upgrade Pro
+  👑 Pro
 </button>
 
             <button
+            className="upgrade-btn"
               onClick={goToBilling}
               disabled={loading}
               style={{
@@ -181,7 +188,7 @@ export default function Navbar() {
                   "0 10px 25px rgba(37,99,235,0.35)",
               }}
             >
-              💳 Billing
+              Billing
             </button>
           </div>
         </div>
@@ -214,16 +221,41 @@ export default function Navbar() {
         </div>
       )}
 
-      <style jsx global>{`
-        @keyframes spin {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
+     <style jsx global>{`
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (max-width: 768px) {
+ .navbar-container{
+      padding:10px 12px !important;
+    }
+
+    .logo-text{
+      font-size:16px !important;
+      line-height:1 !important;
+    }
+
+    .upgrade-btn{
+      padding:8px 10px !important;
+      font-size:12px !important;
+    }
+
+    .billing-btn{
+      padding:8px 10px !important;
+      font-size:12px !important;
+    }
+
+    .back-btn {
+      display: none !important;
+    }
+  }
+`}</style>
     </>
   );
 }

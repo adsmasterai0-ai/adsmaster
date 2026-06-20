@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 
 export default function Footer() {
@@ -16,19 +17,20 @@ export default function Footer() {
           padding: "90px 24px 40px",
         }}
       >
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1.5fr 1fr 1fr",
-            gap: "40px",
-            alignItems: "start",
-          }}
-        >
+ <div
+  className="footer-grid"
+  style={{
+    display: "grid",
+    gridTemplateColumns: "1.5fr 1fr 1fr",
+    gap: "40px",
+    alignItems: "start",
+  }}
+>
           {/* Brand */}
           <div>
             <h2
               style={{
-                fontSize: "42px",
+                fontSize: "32px",
                 fontWeight: 900,
                 color: "#111827",
                 marginBottom: "18px",
@@ -103,19 +105,7 @@ export default function Footer() {
               >
                 Contact
               </Link>
-
-              <Link
-                href="/faq"
-                style={{
-                  textDecoration: "none",
-                  color: "#475569",
-                  fontSize: "16px",
-                  fontWeight: 500,
-                }}
-              >
-                FAQs
-              </Link>
-            </div>
+              </div>
           </div>
 
           {/* Legal */}
@@ -222,6 +212,16 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <style jsx global>{`
+  @media (max-width:768px){
+
+    .footer-grid{
+      grid-template-columns: 1fr !important;
+      gap: 20px !important;
+    }
+
+  }
+`}</style>
     </footer>
   );
 }

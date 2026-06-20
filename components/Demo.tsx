@@ -40,7 +40,7 @@ export default function Demo() {
 
           <h2
             style={{
-              fontSize: "48px",
+              fontSize: "44px",
               fontWeight: "800",
               color: "#0f172a",
               marginBottom: "16px",
@@ -65,6 +65,7 @@ export default function Demo() {
         </div>
 
         <div
+        className= "demo-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -323,6 +324,7 @@ export default function Demo() {
         }}
       >
         <div
+        className="stats-grid"
           style={{
             background: "#0f172a",
             borderRadius: "24px",
@@ -335,21 +337,25 @@ export default function Demo() {
         >
           {[
             {
-    value: "AI",
-    label: "Google Ads Assistant",
-  },
-  {
-    value: "24/7",
-    label: "AI Recommendations",
-  },
-  {
-    value: "📸",
-    label: "Screenshot Analysis",
-  },
-  {
-    value: "🎯",
-    label: "Keyword Generation",
-  },
+  value: "⚡",
+  label: "AI Campaign Builder",
+  desc: "Generate campaigns in minutes",
+},
+{
+  value: "🔑",
+  label: "Keyword Generator",
+  desc: "High-intent keyword ideas",
+},
+{
+  value: "📸",
+  label: "Screenshot Analysis",
+  desc: "Get optimization suggestions",
+},
+{
+  value: "🎯",
+  label: "Google Ads Focused",
+  desc: "Built specifically for advertisers",
+},
 
           ].map((stat, i) => (
             <div
@@ -370,15 +376,26 @@ export default function Demo() {
               >
                 {stat.value}
               </div>
-              <div
-                style={{
-                  fontSize: "14px",
-                  color: "#94a3b8",
-                  fontWeight: "500",
-                }}
-              >
-                {stat.label}
-              </div>
+             <div
+  style={{
+    fontSize: "14px",
+    color: "#ffffff",
+    fontWeight: "700",
+    marginBottom: "6px",
+  }}
+>
+  {stat.label}
+</div>
+
+<div
+  style={{
+    fontSize: "12px",
+    color: "#94a3b8",
+    lineHeight: "1.6",
+  }}
+>
+  {stat.desc}
+</div>
             </div>
           ))}
         </div>
@@ -391,180 +408,30 @@ export default function Demo() {
           }}
         >
      
-          
-        </p>
+                  </p>
       </section>
+     
+      <style jsx global>{`
+  @media (max-width:768px) {
 
-      {/* ============================================= */}
-      {/* TESTIMONIALS — ⚠️ PLACEHOLDER, replace with real reviews later */}
-      {/* ============================================= */}
-      <section
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto 100px",
-          padding: "0 20px",
-        }}
-      >
-        <div style={{ textAlign: "center", marginBottom: "50px" }}>
-          <h2
-            style={{
-              fontSize: "40px",
-              fontWeight: "800",
-              color: "#0f172a",
-              marginBottom: "16px",
-              letterSpacing: "-1px",
-            }}
-          >
-            Loved By Businesses Across India
-          </h2>
-          <p
-            style={{
-              fontSize: "17px",
-              color: "#64748b",
-              maxWidth: "600px",
-              margin: "0 auto",
-            }}
-          >
-            See what advertisers are saying about AdsMaster AI.
-          </p>
-        </div>
+    .demo-grid{
+      grid-template-columns:1fr !important;
+    }
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "24px",
-          }}
-        >
-          {[
-            {
-              name: "Rohit Sharma",
-              role: "Owner, Sharma Taxi Services — Delhi",
-              text: "AdsMaster AI ne mere CPC ko 30% kam kar diya within 2 weeks. Keyword suggestions bilkul spot on hai.",
-              initials: "RS",
-            },
-            {
-              name: "Priya Mehta",
-              role: "Marketing Lead, UrbanNest Realty — Mumbai",
-              text: "Headlines aur descriptions generate karna pehle 2 ghante leta tha, ab 2 minute me ho jata hai. Game changer for agencies.",
-              initials: "PM",
-            },
-            {
-              name: "Arjun Patel",
-              role: "Founder, SpiceTrail Restaurant — Ahmedabad",
-              text: "Quality Score improve hua aur leads double ho gaye. Best investment for small businesses on Google Ads.",
-              initials: "AP",
-            },
-          ].map((t, i) => (
-            <div
-              key={i}
-              style={{
-                background: "#ffffff",
-                border: "1px solid #e2e8f0",
-                borderRadius: "20px",
-                padding: "28px",
-                boxShadow: "0 10px 30px rgba(15,23,42,0.04)",
-              }}
-            >
-              <div style={{ color: "#facc15", fontSize: "16px", marginBottom: "14px" }}>
-                ★★★★★
-              </div>
-              <p
-                style={{
-                  fontSize: "15px",
-                  color: "#334155",
-                  lineHeight: "1.7",
-                  marginBottom: "20px",
-                }}
-              >
-                "{t.text}"
-              </p>
-              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                <div
-                  style={{
-                    width: "42px",
-                    height: "42px",
-                    borderRadius: "50%",
-                    background: "linear-gradient(135deg,#2563eb,#4f46e5)",
-                    color: "#fff",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontWeight: "700",
-                    fontSize: "14px",
-                  }}
-                >
-                  {t.initials}
-                </div>
-                <div>
-                  <div style={{ fontWeight: "700", fontSize: "14px", color: "#0f172a" }}>
-                    {t.name}
-                  </div>
-                  <div style={{ fontSize: "12px", color: "#64748b" }}>{t.role}</div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <p
-          style={{
-            textAlign: "center",
-            fontSize: "12px",
-            color: "#cbd5e1",
-            marginTop: "16px",
-          }}
-        >
-          {/* Remove this line once real testimonials are added */}
-          * Sample testimonials — replace with verified customer reviews before launch
-        </p>
-      </section>
+    .stats-grid{
+      grid-template-columns:1fr 1fr !important;
+    }
 
-      {/* ============================================= */}
-      {/* SECURITY / TRUST BADGES */}
-      {/* ============================================= */}
-      <section
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto 100px",
-          padding: "0 20px",
-        }}
-      >
-        <div
-          style={{
-            background: "#f8fafc",
-            border: "1px solid #e2e8f0",
-            borderRadius: "24px",
-            padding: "40px",
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: "20px",
-          }}
-        >
-          {[
-            { icon: "🔒", title: "256-bit Encryption", desc: "Your data is encrypted in transit & at rest" },
-            { icon: "✅", title: "Google Ads Safe", desc: "No policy violations, fully compliant integration" },
-            { icon: "🛡️", title: "Privacy First", desc: "We never sell or share your business data" },
-            { icon: "⚙️", title: "Built on Supabase", desc: "Enterprise-grade infrastructure & uptime" },
-          ].map((b, i) => (
-            <div key={i} style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "28px", marginBottom: "10px" }}>{b.icon}</div>
-              <div
-                style={{
-                  fontWeight: "700",
-                  fontSize: "14px",
-                  color: "#0f172a",
-                  marginBottom: "6px",
-                }}
-              >
-                {b.title}
-              </div>
-              <div style={{ fontSize: "12px", color: "#64748b", lineHeight: "1.6" }}>
-                {b.desc}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+    .testimonial-grid{
+      grid-template-columns:1fr !important;
+    }
+
+    .security-grid{
+      grid-template-columns:1fr !important;
+    }
+
+  }
+`}</style>
     </>
   );
 }

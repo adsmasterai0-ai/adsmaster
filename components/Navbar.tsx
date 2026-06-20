@@ -32,7 +32,7 @@ export default function Navbar() {
           style={{
             maxWidth: "1400px",
             margin: "0 auto",
-            padding: "18px 28px",
+            padding: "12px 16px",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
@@ -40,18 +40,19 @@ export default function Navbar() {
         >
           {/* Logo */}
           <div
+          className= "navbar-menu"
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "14px",
+              gap: "8px",
             }}
           >
             <img
               src="/logo.png"
               alt="AdsMaster AI"
               style={{
-                width: "38px",
-                height: "38px",
+                width: "32px",
+                height: "32px",
                 borderRadius: "20px",
                 objectFit: "cover",
                 boxShadow:
@@ -60,22 +61,24 @@ export default function Navbar() {
             />
 
             <div>
-              <div
-                style={{
-                  fontSize: "25px",
-                  fontWeight: 900,
-                  color: "#111827",
-                  letterSpacing: "-1px",
-                  lineHeight: 1,
-                }}
-              >
-                ADSMASTER AI
-              </div>
+       <div
+  style={{
+    fontSize: "20px",
+    fontWeight: 900,
+    color: "#111827",
+    letterSpacing: "-1px",
+    lineHeight: 1,
+    whiteSpace: "nowrap",
+  }}
+>
+  ADSMASTER AI
+</div>
             </div>
           </div>
 
           {/* Menu */}
           <div
+          className="navbar-menu"
             style={{
               display: "flex",
               alignItems: "center",
@@ -86,15 +89,15 @@ export default function Navbar() {
   onClick={handleDashboard}
   disabled={loading}
   style={{
-    padding: "12px 26px",
+    padding: "10px 16px",
     borderRadius: "14px",
+    fontSize: "13px",
     border: "none",
     background:
       "linear-gradient(135deg,#4f46e5,#2563eb)",
     color: "#fff",
     fontWeight: 700,
-    fontSize: "14px",
-    cursor: "pointer",
+       cursor: "pointer",
     display: "flex",
     alignItems: "center",
     gap: "8px",
@@ -130,7 +133,12 @@ export default function Navbar() {
 
       {loading && (
         <div
-          style={{
+        className = "navbar-container"
+          style
+          ={{
+            maxWidth: "1400px",
+            margin: "0 auto",
+            padding: "18px, 28px",
             position: "fixed",
             inset: 0,
             background: "rgba(255,255,255,0.7)",
@@ -162,6 +170,33 @@ export default function Navbar() {
             transform: rotate(360deg);
           }
         }
+         
+       @media (max-width:768px){
+
+.navbar-container{
+  padding:12px 16px !important;
+}
+
+.navbar-logo img{
+  width:32px !important;
+  height:32px !important;
+}
+
+.navbar-title{
+  font-size:18px !important;
+}
+
+.navbar-menu{
+  gap:8px !important;
+}
+
+.navbar-menu button{
+  padding:8px 12px !important;
+  font-size:12px !important;
+}
+
+}
+
       `}</style>
     </>
   );

@@ -474,17 +474,6 @@ setPlan(data?.plan || "free");
     marginBottom: "10px",
   }}
 >
-  <h2
-    style={{
-      fontSize: "32px",
-      fontWeight: "800",
-      margin: 0,
-      color: "#0f172a",
-    }}
-  >
-    🤖 AI Google Ads Assistant
-  </h2>
-
   <button
     onClick={() =>
       setIsFullscreen(!isFullscreen)

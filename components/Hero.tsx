@@ -38,13 +38,13 @@ export default function Hero() {
 
         <h1
           style={{
-            fontSize: "48px",
+            fontSize: "44px",
             fontWeight: "900",
             lineHeight: "1.08",
             letterSpacing: "-2px",
             color: "#111827",
             maxWidth: "900px",
-            margin: "0 auto 16px",
+            margin: "0 auto 26px",
           }}
         >
           AI Google Ads Assistant
@@ -57,7 +57,7 @@ export default function Hero() {
                 "linear-gradient(135deg,#2563eb,#4f46e5)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-            }}
+                         }}
           >
             Generate Keywords, Headlines &
             Descriptions In Seconds
