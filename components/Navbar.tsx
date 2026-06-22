@@ -120,7 +120,7 @@ export default function Navbar() {
                   fontSize: "14px",
                 }}
               >
-                Login
+                Get Started
               </button>
             </Link>
 

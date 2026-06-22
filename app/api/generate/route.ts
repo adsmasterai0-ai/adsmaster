@@ -35,11 +35,12 @@ if (!profile) {
 
 
 if (
-  profile?.plan === "free"
+  profile?.plan === "free" &&
+  (profile?.campaigns_used || 0) >= 2
 ) {
   return NextResponse.json({
     result:
-      "Campaign Builder is available on Pro plan only.",
+      "You have used all 2 free campaign generations this month. Upgrade to Pro for 20 campaigns per month.",
     upgrade: true,
   });
 }
@@ -55,11 +56,14 @@ if (
   });
 }
 
-const headlineCount = 15;
+const headlineCount =
+  profile?.plan === "pro" ? 300 : 10;
 
-const descriptionCount = 5;
+const descriptionCount =
+  profile?.plan === "pro" ? 100 : 4;
 
-const keywordCount = 20 ;
+const keywordCount =
+  profile?.plan === "pro" ? 400 : 16;
 
     const prompt = `You are AdsMaster AI.
 

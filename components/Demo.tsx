@@ -35,7 +35,7 @@ export default function Demo() {
               marginBottom: "20px",
             }}
           >
-            ⚡ LIVE EXAMPLE
+            ⚡ SAMPLE EXAMPLE
           </div>
 
           <h2

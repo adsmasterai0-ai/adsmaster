@@ -40,11 +40,12 @@ export default function Hero() {
           style={{
             fontSize: "44px",
             fontWeight: "900",
-            lineHeight: "1.08",
-            letterSpacing: "-2px",
+            lineHeight: "1.15",
+            letterSpacing: "-1px",
             color: "#111827",
             maxWidth: "900px",
             margin: "0 auto 26px",
+        
           }}
         >
           AI Google Ads Assistant

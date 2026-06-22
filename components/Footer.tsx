@@ -198,18 +198,6 @@ export default function Footer() {
             © 2026 AdsMaster AI. All rights reserved.
           </p>
 
-          <div
-            style={{
-              background: "#ecfdf5",
-              color: "#10b981",
-              padding: "10px 18px",
-              borderRadius: "999px",
-              fontSize: "14px",
-              fontWeight: 700,
-            }}
-          >
-            ● All Systems Operational
-          </div>
         </div>
       </div>
       <style jsx global>{`

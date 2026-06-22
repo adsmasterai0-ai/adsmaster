@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
   });
 }
 
-if (profile?.plan === "pro" && profile?.screenshots_used >= 15) {
+if (profile?.plan === "pro" && profile?.screenshots_used >= 20) {
   return NextResponse.json({
     error: "Pro screenshot limit reached",
     upgrade: true,
