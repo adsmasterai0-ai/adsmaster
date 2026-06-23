@@ -20,7 +20,7 @@ export default function Navbar() {
           position: "sticky",
           top: "16px",
           zIndex: 100,
-          margin: "12px 20px",
+          margin: "1px 20px",
           background: "rgba(255,255,255,0.92)",
           backdropFilter: "blur(16px)",
           border: "1px solid #e5e7eb",
@@ -40,11 +40,13 @@ export default function Navbar() {
         >
           {/* Logo */}
           <div
-          className= "navbar-menu"
+          className= "navbar-brand"
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "8px",
+              gap: "12px",
+              flex: 1,
+              minWidth : 0,
             }}
           >
             <img
@@ -61,7 +63,10 @@ export default function Navbar() {
             />
 
             <div>
+
+
        <div
+       className= "navbar-title"
   style={{
     fontSize: "20px",
     fontWeight: 900,
@@ -69,20 +74,23 @@ export default function Navbar() {
     letterSpacing: "-1px",
     lineHeight: 1,
     whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
   }}
 >
-  ADSMASTER AI
+  AdsMaster
 </div>
             </div>
           </div>
 
           {/* Menu */}
           <div
-          className="navbar-menu"
+          className="navbar-actions"
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "28px",
+              gap: "12px",
+              flexShrink: 0,
             }}
           >
      <button
@@ -171,28 +179,29 @@ export default function Navbar() {
           }
         }
          
-       @media (max-width:768px){
+@media (max-width:768px){
 
-.navbar-container{
-  padding:12px 16px !important;
-}
-
-.navbar-logo img{
-  width:32px !important;
-  height:32px !important;
+.navbar-brand{
+  gap:8px !important;
+  flex:1 !important;
+  min-width:0 !important;
 }
 
 .navbar-title{
-  font-size:18px !important;
+  font-size:14px !important;
+  max-width:95px !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  white-space:nowrap !important;
 }
 
-.navbar-menu{
-  gap:8px !important;
+.navbar-actions{
+  gap:6px !important;
 }
 
-.navbar-menu button{
-  padding:8px 12px !important;
-  font-size:12px !important;
+.navbar-actions button{
+  padding:8px 10px !important;
+  font-size:11px !important;
 }
 
 }

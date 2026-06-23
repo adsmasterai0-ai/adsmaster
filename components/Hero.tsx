@@ -38,13 +38,13 @@ export default function Hero() {
 
         <h1
           style={{
-            fontSize: "44px",
+            fontSize: "clamp(30px, 5vw, 55px)",
             fontWeight: "900",
-            lineHeight: "1.15",
+            lineHeight: "1.05",
             letterSpacing: "-1px",
             color: "#111827",
             maxWidth: "900px",
-            margin: "0 auto 26px",
+            margin: "0 auto 20px",
         
           }}
         >

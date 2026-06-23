@@ -132,7 +132,7 @@ export default function Navbar() {
     whiteSpace: "nowrap",
   }}
 >
-  ADSMASTER AI
+  AdsMaster
 </div>
             </div>
           </div>
