@@ -5,21 +5,22 @@ export default function Testimonials() {
     {
       name: "Amit Sharma",
       role: "Digital Marketing Freelancer",
-      image: "/users/user1.jpg",
+      image: "/user1.jpg.jpeg",
+      
       review:
         "AdsMaster AI helped me generate Google Ads campaigns in minutes. The keyword and headline suggestions saved hours of manual work.",
     },
     {
       name: "Priya Verma",
       role: "Small Business Owner",
-      image: "/users/user2.jpg",
+      image: "/user2.jpg.jpeg",
       review:
         "The screenshot analysis feature instantly found issues in my campaigns. CTR improved and wasted spend reduced significantly.",
     },
     {
       name: "Rahul Mehta",
       role: "Performance Marketer",
-      image: "/users/user3.jpg",
+      image: "/user3.jpg.jpeg",
       review:
         "I tested multiple AI tools but AdsMaster AI gives the most practical Google Ads recommendations. Worth every rupee.",
     },

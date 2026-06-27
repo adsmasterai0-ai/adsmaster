@@ -3,6 +3,7 @@
 import Navbar from "../../components/dashboard/Navbar";
 import ChatPanel from "../../components/dashboard/ChatPanel";
 import AdGeneratorPanel from "../../components/dashboard/AdGeneratorPanel";
+import FeedbackSection from "../../components/dashboard/FeedbackSection";
 
 export default function ChatPage() {
   return (
@@ -29,6 +30,7 @@ export default function ChatPage() {
     
 <ChatPanel/>
 <AdGeneratorPanel/>
+<FeedbackSection/>
     
       </div>
     </div>

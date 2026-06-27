@@ -65,6 +65,19 @@ const descriptionCount =
 const keywordCount =
   profile?.plan === "pro" ? 400 : 16;
 
+
+
+  const outputHeadlineCount =
+  profile?.plan === "pro" ? 15 : 5;
+
+const outputDescriptionCount =
+  profile?.plan === "pro" ? 5 : 2;
+
+const outputKeywordCount =
+  profile?.plan === "pro" ? 20 : 16;
+
+
+
     const prompt = `You are AdsMaster AI.
 
 You are a world-class Google Ads Strategist, PPC Consultant, CRO Expert, Performance Marketing Consultant, Media Buyer, and Google Ads Campaign Architect.
@@ -154,7 +167,7 @@ Explain WHY each recommendation is suitable.
 ==================================================
 KEYWORD STRATEGY
 
-Generate:
+Generate EXACTLY:
 
 Phrase Match Keywords:
 ${keywordCount}
@@ -162,13 +175,16 @@ ${keywordCount}
 Exact Match Keywords:
 ${keywordCount}
 
-Rules:
+IMPORTANT RULES
 
+- Never generate more than ${keywordCount}
+- Never generate fewer than ${keywordCount}
 - Commercial intent only
-- High buying intent
-- Conversion focused
-- No broad keywords
+- Buying intent only
 - No informational keywords
+- No broad keywords
+- Every keyword must be unique
+
 
 ==================================================
 NEGATIVE KEYWORDS
@@ -186,26 +202,27 @@ Focused on:
 ==================================================
 HEADLINES
 
-Generate:
+Generate EXACTLY ${headlineCount} Headlines.
 
-${headlineCount} Headlines
+IMPORTANT RULES
 
-Rules:
-
+- Never generate more than ${headlineCount}
+- Never generate fewer than ${headlineCount}
 - Maximum 30 characters
 - High CTR
 - Strong CTA
 - Business relevant
+- Every headline must be unique
 
 ==================================================
 DESCRIPTIONS
 
-Generate:
+Generate EXACTLY ${descriptionCount} Descriptions.
 
-${descriptionCount} Descriptions
+IMPORTANT RULES
 
-Rules:
-
+- Never generate more than ${descriptionCount}
+- Never generate fewer than ${descriptionCount}
 - Maximum 90 characters
 - Benefit focused
 - Trust focused
@@ -327,7 +344,13 @@ Generate:
 - Scaling Roadmap
 - Hidden Growth Opportunities
 
-` : ""}
+` : `
+
+ADVANCED PRO FEATURES
+
+This feature is not available in your current plan.
+
+`}
 
 ==================================================
 QUALITY CONTROL
