@@ -392,6 +392,14 @@ console.log(JSON.stringify(data, null, 2));
       data?.candidates?.[0]?.content?.parts?.[0]?.text ||
       "No response generated.";
 
+      await supabaseAdmin
+  .from("campaign_history")
+  .insert({
+    user_id: userId,
+    title: `${product} - ${location}`,
+    result,
+  });
+
      await supabaseAdmin
   .from("profiles")
   .update({

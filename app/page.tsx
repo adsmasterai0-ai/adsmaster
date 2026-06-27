@@ -5,7 +5,7 @@ import Pricing from "../components/Pricing";
 import Footer from "../components/Footer";
 import Demo from "../components/Demo";
 import FAQ from "../components/FAQ";
-// import SocialProof from "../components/SocialProof";
+import Testimonials from "../components/Testimonials";
 
 export default function Home() {
   return (
@@ -16,6 +16,7 @@ export default function Home() {
            <Features /> 
             
                <FAQ />
+                <Testimonials />
                         <Pricing />
            <Footer />
     </>

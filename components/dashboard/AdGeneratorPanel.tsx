@@ -15,6 +15,7 @@ export default function AdGeneratorPanel() {
   const [result, setResult] = useState("");
   const [showUpgrade, setShowUpgrade] =
   useState(false);
+  const [history, setHistory] = useState<any[]>([]);
   const [plan, setPlan] = useState("free");
   const [upgradeMessage, setUpgradeMessage] = useState("");
   const [userId, setUserId] = useState("");
@@ -136,6 +137,19 @@ const productOptions = [
   loadPlan();
 }, []);
 
+const loadHistory = async (uid: string) => {
+  const { data } = await supabase
+    .from("campaign_history")
+    .select("*")
+    .eq("user_id", uid)
+    .order("created_at", {
+      ascending: false,
+    })
+    .limit(5);
+
+  setHistory(data || []);
+};
+
 const loadPlan = async () => {
   const {
     data: { user },
@@ -149,6 +163,7 @@ const loadPlan = async () => {
   }
 
   setUserId(user.id);
+  await loadHistory(user.id);
 
   const { data, error } = await supabase
     .from("profiles")
@@ -247,6 +262,7 @@ body: JSON.stringify({
 }
 
       setResult(data.result);
+      await loadHistory (userId);
     } catch {
       setResult("Something went wrong");
     }
@@ -721,6 +737,52 @@ return (
       >
         🗑️ Clear All
       </button>
+
+      {history.length > 0 && (
+  <div
+    style={{
+      marginTop: "25px",
+      marginBottom: "20px",
+      background: "#f8fafc",
+      border: "1px solid #e5e7eb",
+      borderRadius: "20px",
+      padding: "20px",
+    }}
+  >
+    <div
+      style={{
+        fontSize: "18px",
+        fontWeight: "800",
+        marginBottom: "14px",
+        color: "#111827",
+      }}
+    >
+      📜 Recent Campaigns
+    </div>
+
+    {history.map((item) => (
+      <div
+        key={item.id}
+        onClick={() => {
+          setResult(item.result);
+        }}
+        style={{
+          padding: "14px",
+          marginBottom: "10px",
+          background: "#ffffff",
+          border: "1px solid #e5e7eb",
+          borderRadius: "14px",
+          cursor: "pointer",
+          transition: "0.2s",
+          fontWeight: "600",
+          color: "#111827",
+        }}
+      >
+        {item.title}
+      </div>
+    ))}
+  </div>
+)}
 
       {result && (
         <div
