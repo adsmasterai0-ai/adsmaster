@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "../../../lib/supabase-admin";
 import { getUserPlan } from "../../../lib/getUserPlan";
 import { checkSubscription } from "../../../lib/checkSubscription";
+import { BETA_MODE } from "../../../lib/config";
 
 export async function POST(req: NextRequest) {
   try {
@@ -16,28 +17,30 @@ export async function POST(req: NextRequest) {
     await checkSubscription(userId);
     const profile = await getUserPlan(userId);
 
-    if (profile?.plan === "free" && profile?.ai_chats_used >= 10) {
+    const effectivePlan = BETA_MODE ? "pro" : profile?.plan;
+
+    if (!BETA_MODE && effectivePlan === "free" && profile?.ai_chats_used >= 10) {
       return NextResponse.json({
         error: "Free plan limit reached",
         upgrade: true,
       });
     }
 
-    if (profile?.plan === "free" && profile?.screenshots_used >= 2) {
+    if ( !BETA_MODE && effectivePlan === "free" && profile?.screenshots_used >= 2) {
       return NextResponse.json({
         error: "Screenshot limit reached",
         upgrade: true,
       });
     }
 
-    if (profile?.plan === "pro" && profile?.ai_chats_used >= 100) {
+    if ( !BETA_MODE && effectivePlan === "pro" && profile?.ai_chats_used >= 100) {
   return NextResponse.json({
     error: "Pro AI chat limit reached",
     upgrade: true,
   });
 }
 
-if (profile?.plan === "pro" && profile?.screenshots_used >= 20) {
+if ( !BETA_MODE && effectivePlan === "pro" && profile?.screenshots_used >= 20) {
   return NextResponse.json({
     error: "Pro screenshot limit reached",
     upgrade: true,

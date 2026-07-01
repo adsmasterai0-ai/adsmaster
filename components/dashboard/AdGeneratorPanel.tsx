@@ -307,7 +307,29 @@ body: JSON.stringify({
     setBudget("");
     setCustomBudget("");
   };
+const clearHistory = async () => {
+  if (!confirm("Delete all campaign history?")) return;
 
+  const res = await fetch("/api/clear-history", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userId,
+    }),
+  });
+
+  const data = await res.json();
+
+  if (data.success) {
+    setHistory([]);
+    setResult("");
+    alert("Campaign history deleted successfully.");
+  } else {
+    alert(data.error);
+  }
+};
 
 
 return (
@@ -738,6 +760,8 @@ return (
         🗑️ Clear All
       </button>
 
+      
+
       {history.length > 0 && (
   <div
     style={{
@@ -749,16 +773,39 @@ return (
       padding: "20px",
     }}
   >
-    <div
-      style={{
-        fontSize: "18px",
-        fontWeight: "800",
-        marginBottom: "14px",
-        color: "#111827",
-      }}
-    >
-      📜 Recent Campaigns
-    </div>
+ <div
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: "14px",
+  }}
+>
+  <div
+    style={{
+      fontSize: "18px",
+      fontWeight: "800",
+      color: "#111827",
+    }}
+  >
+    📜 Recent Campaigns
+  </div>
+
+  <button
+    onClick={clearHistory}
+    style={{
+      border: "none",
+      background: "#ef4444",
+      color: "#fff",
+      padding: "8px 14px",
+      borderRadius: "10px",
+      cursor: "pointer",
+      fontWeight: "600",
+    }}
+  >
+    🗑️ Clear History
+  </button>
+</div>
 
     {history.map((item) => (
       <div

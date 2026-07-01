@@ -169,7 +169,7 @@ export default function Navbar() {
   👑 Pro
 </button>
 
-            <button
+            {/* <button
             className="upgrade-btn"
               onClick={goToBilling}
               disabled={loading}
@@ -190,6 +190,9 @@ export default function Navbar() {
             >
               Billing
             </button>
+ */}
+
+
           </div>
         </div>
       </nav>

@@ -5,6 +5,7 @@ import { getUserPlan } from "../../../lib/getUserPlan";
 import { supabaseAdmin } from "../../../lib/supabase-admin";
 import { checkSubscription }
 from "../../../lib/checkSubscription";
+import { BETA_MODE } from "../../../lib/config";
 
 export async function POST(req: NextRequest) {
   try {
@@ -23,6 +24,8 @@ await checkSubscription(userId);
 
 const profile = await getUserPlan(userId);
 
+const effectivePlan = BETA_MODE ? "pro" : profile?.plan;
+
 console.log("USER ID:", userId);
 console.log("PROFILE:", profile);
 
@@ -35,7 +38,7 @@ if (!profile) {
 
 
 if (
-  profile?.plan === "free" &&
+  !BETA_MODE && effectivePlan === "free" &&
   (profile?.campaigns_used || 0) >= 2
 ) {
   return NextResponse.json({
@@ -46,7 +49,7 @@ if (
 }
 
 if (
-  profile?.plan === "pro" &&
+  !BETA_MODE && effectivePlan === "pro" &&
   (profile?.campaigns_used || 0) >= 20
 ) {
   return NextResponse.json({
@@ -57,24 +60,24 @@ if (
 }
 
 const headlineCount =
-  profile?.plan === "pro" ? 300 : 10;
+  effectivePlan === "pro" ? 300 : 10;
 
 const descriptionCount =
-  profile?.plan === "pro" ? 100 : 4;
+  effectivePlan === "pro" ? 100 : 4;
 
 const keywordCount =
-  profile?.plan === "pro" ? 400 : 16;
+  effectivePlan === "pro" ? 400 : 16;
 
 
 
   const outputHeadlineCount =
-  profile?.plan === "pro" ? 15 : 5;
+  effectivePlan === "pro" ? 15 : 5;
 
 const outputDescriptionCount =
-  profile?.plan === "pro" ? 5 : 2;
+  effectivePlan === "pro" ? 5 : 2;
 
 const outputKeywordCount =
-  profile?.plan === "pro" ? 20 : 16;
+  effectivePlan === "pro" ? 20 : 16;
 
 
 
@@ -334,7 +337,7 @@ Generate:
 ==================================================
 ADVANCED PRO FEATURES
 
-${plan === "pro" ? `
+${effectivePlan === "pro" ? `
 
 Generate:
 
